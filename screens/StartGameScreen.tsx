@@ -26,7 +26,7 @@ const StartGameScreen = ({
 
   const confirmInputHandler = () => {
     const chosenNumber = parseInt(enteredValue);
-    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99)
+    if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > defaultMax)
       Alert.alert(
         'Invalid number!',
         'Number has to be a number between 1 and 99.',
@@ -40,7 +40,8 @@ const StartGameScreen = ({
       <Title extendStyle={styles.headingText}>Guess the number game</Title>
       <View style={styles.container}>
         <InstructionText>
-          The device will guess your number. Please enter a number between 1 and {defaultMax}
+          The device will guess your number. Please enter a number between 1 and{' '}
+          {defaultMax}
         </InstructionText>
         <TextInput
           style={styles.numberInput}
@@ -50,6 +51,9 @@ const StartGameScreen = ({
           autoCorrect={false}
           value={enteredValue}
           onChangeText={numberInputHandler}
+          placeholder="0"
+          placeholderTextColor={defaultStyles.inputTextColor}
+          autoFocus
         />
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
@@ -69,12 +73,12 @@ const StartGameScreen = ({
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
-    marginTop: 100,
+    marginTop: 48,
     flexDirection: 'column',
     marginHorizontal: 24,
   },
   headingText: {
-    fontFamily: defaultStyles.fontFamily
+    fontFamily: defaultStyles.fontFamily,
   },
   container: {
     backgroundColor: defaultStyles.primaryColor,

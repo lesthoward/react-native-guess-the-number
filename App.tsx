@@ -1,18 +1,15 @@
-import { useCallback, useEffect } from 'react';
-import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
+import { StyleSheet, ImageBackground, SafeAreaView, Dimensions } from 'react-native';
 import { defaultStyles } from './constans/config';
 import StartGameScreen from './screens/StartGameScreen';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import GameScreen from './screens/GameScreen';
 import GameOver from './screens/GameOverScreen';
-// import { useFonts } from 'expo-font';
 import {
   useFonts,
   Poppins_400Regular,
   Poppins_400Regular_Italic,
 } from '@expo-google-fonts/poppins';
-import * as SplashScreen from 'expo-splash-screen';
 
 let defaultMax = 1000;
 export interface PickedNumberHandler {

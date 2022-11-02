@@ -83,6 +83,7 @@ const GameScreen = ({
 
   return (
     <View style={styles.container}>
+      <Title extendStyle={styles.guessedNumber}>Guessed Number Below</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card backgroundColor={defaultStyles.cardBackgroundColor}>
         <InstructionText color={defaultStyles.accentTextColor}>
@@ -122,6 +123,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 48,
     paddingHorizontal: 24,
+  },
+  guessedNumber: {
+    fontFamily: defaultStyles.fontFamily,
   },
   title: {
     fontSize: 24,
